@@ -14,12 +14,12 @@ export default {
 </script>
 
 <style scoped>
-.border{
+.border {
   margin-left: auto;
   margin-right: auto;
   border-color: yellow;
   border-width: 5px;
-  border-style:solid;
+  border-style: solid;
   color: purple;
   font-size: 30px;
 }

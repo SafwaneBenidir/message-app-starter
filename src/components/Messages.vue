@@ -13,7 +13,7 @@ export default {
   name: "Messages",
   components: {Message},
   data() {
-    return{
+    return {
       messages: messagesMock,
     };
   }
@@ -21,10 +21,10 @@ export default {
 </script>
 
 <style scoped>
-.border{
+.border {
   border-color: blue;
   border-width: 5px;
-  border-style:solid;
+  border-style: solid;
   color: purple;
   font-size: 30px;
 }
