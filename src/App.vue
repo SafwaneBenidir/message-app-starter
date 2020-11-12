@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <HelloWorld :msg="'Welcome to Your Vue.JS App'"/>
+    <HelloWorld v-on:event-key="doSomething" :msg="'Welcome to Your Vue.JS App'"/>
     <Messages/>
     <Menu></Menu>
   </div>
@@ -11,12 +11,26 @@ import HelloWorld from "./components/HelloWorld.vue";
 import Messages from "./components/Messages.vue";
 import Menu from "@/components/Menu";
 
+/*import moment from 'moment';
+import Vue from 'vue';
+
+Vue.filter('formatDate', function(value) {
+  if (value) {
+    return moment(String(value)).format('MM/DD/YYYY hh:mm')
+  }
+});*/
+
 export default {
   name: "App",
   components: {
     HelloWorld,
     Messages,
     Menu
+  },
+  methods: {
+    doSomething(message){
+      alert(message);
+    }
   }
 };
 </script>

@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{msg}}</h1>
+    <button v-on:click="say('salut')">Dire salut</button>
   </div>
 </template>
 
@@ -9,6 +10,11 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String,
+  },
+  methods: {
+    say(message){
+      this.$emit("event-key",message);
+    }
   }
 };
 </script>

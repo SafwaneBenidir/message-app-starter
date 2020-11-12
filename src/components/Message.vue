@@ -1,19 +1,19 @@
 <template>
-  <button v-on:click="lu($event)">
   <div class="border1">
     <img v-bind:src="message.sender.profileImage"/>
 
     <span class="name">{{ message.sender.name }}</span>
-    <div class="checkbox">
-      <label v-if="message.read">lu</label>
+    <div class="checkbox" v-on:click="lu">
+      <label v-if ="message.read">lu</label>
+<!--      {{message.date}}-->
     </div>
     <br>
     <span class="content">{{ message.content }}</span>
   </div>
-  </button>
 </template>
 
 <script>
+
 export default {
   name: "Message",
   data() {
@@ -26,8 +26,8 @@ export default {
   },
   methods: {
     lu() {
-      this.$emit("message");
-    }
+      this.$emit();
+    },
   }
 }
 </script>
