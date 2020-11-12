@@ -1,15 +1,16 @@
 <template>
+  <button v-on:click="lu($event)">
   <div class="border1">
     <img v-bind:src="message.sender.profileImage"/>
 
     <span class="name">{{ message.sender.name }}</span>
     <div class="checkbox">
-      <input type="checkbox" id="checkbox" v-model="checked">
-      <label for="checkbox">{{ checked }}</label>
+      <label v-if="message.read">lu</label>
     </div>
     <br>
     <span class="content">{{ message.content }}</span>
   </div>
+  </button>
 </template>
 
 <script>
@@ -17,11 +18,16 @@ export default {
   name: "Message",
   data() {
     return {
-      checked: false
+      checked: false,
     }
   },
   props: {
     message: Object,
+  },
+  methods: {
+    lu() {
+      this.$emit("message");
+    }
   }
 }
 </script>

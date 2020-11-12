@@ -1,7 +1,7 @@
 <template>
   <div class="border">
     This is the messages
-    <Message v-for="currentMessage in messages" :key="currentMessage.id" :message="currentMessage"/>
+    <Message v-for="currentMessage in messages" :key="currentMessage.id" :message="currentMessage" v-on:message="updateLu"/>
   </div>
 </template>
 
@@ -16,6 +16,12 @@ export default {
     return {
       messages: messagesMock,
     };
+  },
+  methods: {
+    updateLu(message){
+      message.read=true;
+      this.message.read=true;
+    }
   }
 }
 </script>
